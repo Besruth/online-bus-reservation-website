@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BusEase | Online Bus Reservation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+<div class="app-shell">
+  <aside class="sidebar">
+    <a class="brand" href="#"><span class="brand-icon">B</span><span>bus<span class="brand-accent">ease</span><small>TRAVEL, MADE SIMPLE</small></span></a>
+    <div class="side-label">WORKSPACE</div>
+    <button class="nav-item active" data-page="dashboard"><span>▦</span> Overview</button>
+    <button class="nav-item" data-page="bookings"><span>▣</span> Bookings</button>
+    <button class="nav-item" data-page="passengers"><span>♙</span> Passengers</button>
+    <button class="nav-item" data-page="buses"><span>▤</span> Bus fleet</button>
+    <button class="nav-item" data-page="routes"><span>⌁</span> Routes</button>
+    <div class="sidebar-bottom">
+      <div class="help-card"><div class="help-icon">✦</div><strong>Need a hand?</strong><p>Manage your travel operations with ease.</p><a href="mailto:support@busease.demo">Contact support ↗</a></div>
+      <div class="profile"><div class="avatar">AD</div><div><strong>Admin Desk</strong><small>Administrator</small></div><span class="profile-dots">•••</span></div>
+    </div>
+  </aside>
+  <main class="main">
+    <header class="topbar"><div class="mobile-brand">Busease</div><div class="crumb">Workspace <span>/</span> <strong id="crumb-title">Overview</strong></div><div class="top-actions"><span class="live-dot"></span><span class="live-text">System online</span><div class="top-avatar">AD</div></div></header>
+    <section class="content">
+      <div class="welcome-row"><div><div class="eyebrow">TUESDAY, YOUR JOURNEY STARTS HERE</div><h1 id="page-title">Good day, Admin <span>✦</span></h1><p id="page-subtitle">Here’s what’s happening across your bus network today.</p></div><button class="primary-btn" id="new-booking">＋ New booking</button></div>
+      <section id="dashboard-page">
+        <div class="stat-grid">
+          <article class="stat-card"><div class="stat-top"><span>Total bookings</span><span class="stat-icon purple">▣</span></div><strong id="stat-bookings">—</strong><small><i class="trend">↗</i> All reservations</small></article>
+          <article class="stat-card"><div class="stat-top"><span>Registered passengers</span><span class="stat-icon blue">♙</span></div><strong id="stat-passengers">—</strong><small>Passenger database</small></article>
+          <article class="stat-card"><div class="stat-top"><span>Active buses</span><span class="stat-icon orange">▤</span></div><strong id="stat-buses">—</strong><small>Ready for journeys</small></article>
+          <article class="stat-card"><div class="stat-top"><span>Confirmed revenue</span><span class="stat-icon green">₹</span></div><strong id="stat-revenue">—</strong><small>From confirmed bookings</small></article>
+        </div>
+        <div class="section-heading"><div><h2>Recent bookings</h2><p>A quick look at the latest reservations.</p></div><button class="text-btn" data-goto="bookings">View all bookings ↗</button></div>
+        <div class="table-card"><div class="table-wrap"><table><thead><tr><th>BOOKING ID</th><th>PASSENGER</th><th>JOURNEY</th><th>DATE</th><th>SEATS</th><th>AMOUNT</th><th>STATUS</th></tr></thead><tbody id="recent-body"><tr><td colspan="7" class="empty">Loading bookings…</td></tr></tbody></table></div></div>
+        <div class="bottom-grid"><div class="tip-card"><div class="tip-symbol">✦</div><div><strong>Keep every journey on track</strong><p>Add routes and buses first, then create bookings for your passengers.</p></div></div><div class="mini-card"><span>QUICK ACTION</span><button data-goto="routes">＋ Add a new route</button></div></div>
+      </section>
+      <section id="manage-page" class="hidden">
+        <div class="section-heading manage-heading"><div><h2 id="table-title">Bookings</h2><p id="table-desc">Manage records in your reservation system.</p></div><button class="primary-btn" id="add-record">＋ Add record</button></div>
+        <div class="table-card"><div class="table-toolbar"><div class="searchbox">⌕ <input id="search-input" placeholder="Search records..."></div><span id="record-count">0 records</span></div><div class="table-wrap"><table><thead id="manage-head"></thead><tbody id="manage-body"></tbody></table></div></div>
+      </section>
+      <footer>© 2026 BusEase Reservation System <span>Made for smoother journeys.</span></footer>
+    </section>
+  </main>
+</div>
+<div class="modal-backdrop hidden" id="modal"><div class="modal"><div class="modal-head"><div><span class="eyebrow">BUSEASE WORKSPACE</span><h2 id="modal-title">Add record</h2></div><button class="close-btn" id="close-modal">×</button></div><form id="record-form"><div id="form-fields" class="form-grid"></div><div class="modal-actions"><button type="button" class="secondary-btn" id="cancel-modal">Cancel</button><button class="primary-btn" type="submit">Save record</button></div></form></div></div>
+<div class="toast" id="toast"></div>
+<script src="./js/app.js"></script>
+</body></html>
